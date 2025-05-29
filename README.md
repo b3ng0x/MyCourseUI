@@ -1,70 +1,102 @@
-# Getting Started with Create React App
+# 🧠 MyCourseUI – Learn Your Own Courses Like Udemy
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**MyCourseUI** is a React-based web application that turns any directory of video files on your computer into a course platform with a **Udemy-style interface**. Track your progress, navigate through chapters and lessons, and learn efficiently — all from your local files.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🎯 Purpose
 
-### `npm start`
+If you have a collection of tutorials, bootcamp recordings, or video courses saved on your computer, this project lets you:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🎥 Watch them in a structured format (Course → Chapters → Lessons)
+- ✅ Track your progress lesson by lesson
+- 🧭 Resume from where you left off
+- 💻 Use it completely offline, locally
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📁 How It Works
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Organize your course folder** like this:
 
-### `npm run build`
+```
+My Courses/
+├── Course A/
+│   ├── Chapter 1/
+│   │   ├── 1. Introduction.mp4
+│   │   └── 2. Setup.mov
+│   └── Chapter 2/
+│       └── 1. Advanced Topics.mkv
+├── Course B/
+│   └── ...
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Run a Python script** that scans your course directory and generates a JSON file (`courses-structured.json`) used by the React frontend.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. The script also links (or copies) your course folder into `public/course/` so the React app can access your video files.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Launch the React app (`npm start`) and enjoy a Udemy-like experience!
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 🧩 Automatic detection of course structure
+- 📚 Organized by course → chapter → lesson
+- ✅ Progress tracking saved locally (with reset option)
+- 🔁 Resume from last watched video (auto-scroll)
+- ⚡ Works 100% offline
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📦 Getting Started
 
-## Learn More
+### 1. Clone the Repo
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/b3ng0x/MyCourseUI.git
+cd mycourseui
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Install Dependencies
 
-### Code Splitting
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. Prepare Your Courses
 
-### Analyzing the Bundle Size
+Put your courses in a folder like:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+~/Videos/My-Courses/
+```
 
-### Making a Progressive Web App
+Then update the Python script with this path.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### 4. Run the Python Script
 
-### Advanced Configuration
+```bash
+python3 courses.py
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+It will:
+- Generate `public/courses-structured.json`
+- Link or copy your course folder to `public/course/`
 
-### Deployment
+### 5. Start the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm start
+```
 
-### `npm run build` fails to minify
+Open [http://localhost:3000](http://localhost:3000)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🛠 Tech Stack
+
+- ⚛️ React
+- 🎬 HTML5 Video Player
+- 🐍 Python (for file parsing and linking)
+- 💾 LocalStorage (for progress tracking)
