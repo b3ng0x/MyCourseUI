@@ -1,0 +1,38 @@
+.sidebar {
+    width: 300px;
+    overflow-y: auto;
+    background: #f4f4f4;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+  }
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .sidebar-header button {
+    background: #e74c3c;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .course-block {
+    margin-bottom: 1rem;
+  }
+  .chapter h3 {
+    margin: 0.5rem 0;
+  }
+  .chapter ul {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  .chapter li {
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+  .chapter li.active {
+    background: #dfe6ff;
+  }

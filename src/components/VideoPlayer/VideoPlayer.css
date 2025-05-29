@@ -1,0 +1,12 @@
+.video-area {
+    flex: 1;
+    padding: 1rem;
+    background: #fff;
+  }
+  .video-area video {
+    width: 100%;
+    max-height: 80vh;
+    border: 1px solid #ccc;
+  }
+
+  
